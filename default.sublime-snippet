@@ -1,0 +1,50 @@
+<snippet>
+	<content><![CDATA[
+//Robs Code
+
+/***********HEADER***************/
+#include <iostream>
+#include <bitset>
+#include <deque>
+#include <cstdio>
+#include <cstring>
+#include <cmath>
+#include <string>
+#include <algorithm>
+#include <list>
+#include <vector>
+#include <unordered_set>
+#include <unordered_map>
+#include <stack>
+#include <set>
+#include <queue>
+#include <map>
+#include <iomanip>
+
+/***********MACROS***************/
+#define int long long int
+#define all(x) x.begin(),x.end()
+#define allr(x) x.rbegin(),x.rend()
+#define endl "\n"
+#define pb push_back
+#define _1 first
+#define _2 second
+#define pii pair<int,int>
+
+using namespace std;
+
+const int N = 1e5 + 1;
+int n,m,i,j,k,l,x,y,z,cnt[3],sum[3];
+
+/***********MAIN**************/
+signed main(){
+	ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+	${2:}
+}
+//.........
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>m</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
