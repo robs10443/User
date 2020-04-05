@@ -1,0 +1,58 @@
+<snippet>
+	<content><![CDATA[
+//Robs Code
+
+/***********HEADER***************/
+#include <iostream>
+#include <bitset>
+#include <deque>
+#include <cstdio>
+#include <cstring>
+#include <cmath>
+#include <string>
+#include <algorithm>
+#include <list>
+#include <vector>
+#include <unordered_set>
+#include <unordered_map>
+#include <stack>
+#include <set>
+#include <queue>
+#include <map>
+#include <iomanip>
+
+/***********MACROS***************/
+#define int long long int
+#define all(x) x.begin(),x.end()
+#define allr(x) x.rbegin(),x.rend()
+#define pb push_back
+#define _1 first
+#define _2 second
+#define pii pair<int,int>
+
+using namespace std;
+
+const int N = 1e5 + 1;
+
+int n,m,i,j,l,k,x,y,a,b,cnt[3],sum[3];
+
+/***********MAIN**************/
+void solve(){
+	
+}
+signed main(){
+	ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+	int t;
+	cin>>t;
+	for(int i=1;i<=t;i++){
+		cout<<"Case #"<<i<<": ";
+		solve();
+	}
+}
+//.........
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>google</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
