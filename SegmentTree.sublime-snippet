@@ -1,0 +1,60 @@
+<snippet>
+	<content><![CDATA[
+const int Nx = 1e6+10;
+class node{
+public:
+	//variables
+	
+	node(){
+		//initialization
+	
+	}
+};
+node tree[4*Nx];
+node merge(node left,node right){
+	node temp;
+	//merging logic
+	
+	return temp;
+}
+void build(int indx,int start,int end){
+	if(start == end){
+		//leaf logic
+		
+		return ;
+	}
+	int mid = (start + end) / 2;
+	build(2*indx,start,mid);
+	build(2*indx+1,mid+1,end);
+	tree[indx] = merge(tree[2*indx],tree[2*indx+1]);
+}
+node query(int indx,int start,int end,int qs,int qe){
+	if(qs > end || qe < start){
+		node temp;
+		return temp;
+	}
+	if(qs <= start && end <= qe){
+		return tree[indx];
+	}
+	int mid = (start + end) / 2;
+	return merge(query(2*indx,start,mid,qs,qe),query(2*indx+1,mid+1,end,qs,qe));
+}
+void update(int node,int start,int end,int indx,int val = -1){
+	if(start == end){
+		//update logic
+		return ;
+	}
+	int mid = (start + end)/2;
+	if(indx <= mid){
+		update(2*node,start,mid,indx,val);
+	}else{
+		update(2*node+1,mid+1,end,indx,val);
+	}
+	tree[node] = merge(tree[2*node],tree[2*node+1]);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>segmentTree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
