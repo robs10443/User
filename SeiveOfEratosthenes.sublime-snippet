@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+const int Np = 1e6 + 10;
+bool is_prime[Np+1];
+void seive(){
+	int n = Np;
+	is_prime[0] = is_prime[1] = false;
+	for (int i = 2; i * i <= n; i++) {
+	    if (is_prime[i]) {
+	        for (int j = i * i; j <= n; j += i)
+	            is_prime[j] = false;
+	    }
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>seive</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

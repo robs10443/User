@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+vector<int> factor(int n){
+	vector<int> v;
+	for(int i=1;i*i<=n;i++){
+		if(n%i == 0){
+			v.pb(i);
+			if(n/i != i){
+				v.pb(n/i);
+			}
+		}
+	}
+	sort(all(v));
+	return v;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fact</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
