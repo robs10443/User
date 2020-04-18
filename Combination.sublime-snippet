@@ -29,7 +29,7 @@ int factorial[Xn],ifactorial[Xn];
 void pre(){
 	factorial[0] = 1;
 	ifactorial[0] = 1;
-	for(int i=1;i<=Xn;i++){
+	for(int i=1;i<Xn;i++){
 		factorial[i] = mul(factorial[i-1],i);
 		ifactorial[i] = divi(1,factorial[i]);
 	}
