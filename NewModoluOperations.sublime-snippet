@@ -1,0 +1,193 @@
+<snippet>
+	<content><![CDATA[
+//first change mod value
+
+const int mod = (998244353);
+class modint{
+private:
+    long long val;
+public:
+    
+    modint(long long val = 0){
+        this -> val = val;
+        this -> val %= mod;
+    }
+    
+    friend istream &operator >> (istream &cin,modint &mint){
+        cin >> mint.val;
+        return cin;
+    }
+    
+    friend ostream &operator << (ostream &cout,const modint mint){
+        cout << mint.val;
+        return cout;
+    }
+    
+    modint operator + (modint &x){
+        return modint(((x.val) % mod + (this -> val) % mod) % mod);
+    }
+    
+    modint operator - (modint &x){
+        return modint(((x.val) % mod - (this -> val) % mod + mod) % mod);
+    }
+    
+    modint operator * (modint &x){
+        return modint(((x.val) % mod * (this -> val) % mod) % mod );
+    }
+    
+    modint operator + (long long &x){
+        return modint(((x) % mod + (this -> val) % mod) % mod);
+    }
+    
+    modint operator - (long long &x){
+        return modint(((x) % mod - (this -> val) % mod + mod) % mod);
+    }
+    
+    modint operator * (long long &x){
+        return modint(((x) % mod * (this -> val) % mod) % mod );
+    }
+
+    modint operator ^ (long long y){
+        long long ans = 1, x = this -> val;
+        while(y){
+            if(y & 1)
+                ans = (ans * x) % mod;
+            y >>= 1LL;
+            x = (x * x) % mod;
+        }
+        return modint(ans);
+    }
+    
+    modint operator ^ (modint exp){
+        long long ans = 1, x = this -> val,y = exp.val;
+        while(y){
+            if(y & 1)
+                ans = (ans * x) % mod;
+            y >>= 1LL;
+            x = (x * x) % mod;
+        }
+        return modint(ans);
+    }
+    
+    modint operator / (modint den){
+        return modint(((den ^ (mod - 2)) * (this -> val)));
+    }
+
+    modint operator / (long long den){
+        return modint(((modint(den) ^ (mod - 2)) * (this -> val)));
+    }
+
+    modint operator += (modint x){
+        this -> val = (((this -> val) + (x.val))%mod);
+    }
+
+    modint operator -= (modint x){
+        this -> val = ((this -> val) - (x.val) + mod) % mod;
+    }
+    
+    modint operator *= (modint x){
+        this -> val = ((this -> val) * (x.val))%mod;
+    }
+    
+    modint operator /= (modint x){
+        this -> val = (modint(this -> val) / (x)).val;
+    }
+    
+    modint operator += (long long x){
+    	this->val = (this -> val + x)%mod;
+    }
+
+    modint operator -= (long long x){
+    	this->val = (this -> val - x + mod)%mod;
+    }
+    
+    modint operator *= (long long x){
+        this -> val = ((this -> val) * (x))%mod;
+    }
+    
+    modint operator /= (long long x){
+        this -> val = (modint(this -> val) / modint(x)).val;
+    }
+    
+    modint operator ++ (){
+        modint temp;
+        temp.val = ++(this -> val);
+        return temp;
+    }
+
+    modint operator ++ (signed){
+        modint temp;
+        temp.val = (this -> val)++;
+        return temp;
+    }
+    
+    modint operator -- (){
+        modint temp;
+        temp.val = --(this -> val);
+        return temp;
+    }
+    
+    modint operator --(signed){
+        modint temp;
+        temp.val = (this -> val)--;
+        return temp;
+    }
+
+    bool operator != (modint &x){
+        return ((this -> val) != x.val);
+    }
+
+    bool operator == (modint &x){
+        return ((this -> val) == x.val);
+    }
+
+    bool operator > (modint &x){
+        return ((this -> val) > x.val);
+    }
+
+    bool operator < (modint &x){
+        return ((this -> val) < x.val);
+    }
+    
+    bool operator >= (modint &x){
+        return ((this -> val) >= x.val);
+    }
+    
+    bool operator <= (modint &x){
+        return ((this -> val) <= x.val);
+    }
+
+    bool operator != (long long &x){
+        return ((this -> val) != x);
+    }
+
+    bool operator == (long long &x){
+        return ((this -> val) == x);
+    }
+
+    bool operator > (long long &x){
+    	return ((this -> val) > x);
+    }
+
+    bool operator < (long long &x){
+        return ((this -> val) < x);
+    }
+    
+    bool operator >= (long long &x){
+        return ((this -> val) >= x);
+    }
+    
+    bool operator <= (long long &x){
+        return ((this -> val) <= x);
+    }
+
+    operator int() const{
+        return (this -> val);
+    }
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>newmod</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
