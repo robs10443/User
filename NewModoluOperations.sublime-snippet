@@ -28,7 +28,7 @@ public:
     }
     
     modint operator - (modint &x){
-        return modint(((x.val) % mod - (this -> val) % mod + mod) % mod);
+        return modint(((this -> val) % mod  - (x.val) % mod + mod) % mod);
     }
     
     modint operator * (modint &x){
@@ -40,7 +40,7 @@ public:
     }
     
     modint operator - (long long &x){
-        return modint(((x) % mod - (this -> val) % mod + mod) % mod);
+        return modint(((this -> val) % mod  - (x) % mod + mod) % mod);
     }
     
     modint operator * (long long &x){

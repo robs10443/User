@@ -17,7 +17,7 @@ void dfs(int src,int par,int lvl){
 }
 void buildLCA(){
 	for(int i=1;i<LOG;i++){
-		for(int j=1;j<=Nx;j++){
+		for(int j=1;j<Nx;j++){
 			lca[j][i] = lca[lca[j][i-1]][i-1];
 		}
 	}
