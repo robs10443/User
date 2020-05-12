@@ -4,6 +4,7 @@ const int Np = 1e6 + 10;
 bool is_prime[Np+1];
 void seive(){
 	int n = Np;
+	memset(is_prime,true,sizeof is_prime);
 	is_prime[0] = is_prime[1] = false;
 	for (int i = 2; i * i <= n; i++) {
 	    if (is_prime[i]) {
