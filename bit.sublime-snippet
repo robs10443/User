@@ -28,6 +28,23 @@ struct BIT{//use one based indexing
 	int rsum(int l, int r){
 		return pref(r) - pref(l - 1);
 	}
+
+	int kthOrder(int k){
+		int cur = 0,sum = 0, ExtraSize = N + 1;
+		int ln = log2(ExtraSize);
+		for(int i = ln;i >= 0 ; --i){
+			int temp = cur + (1 << i);
+			if(temp <= ExtraSize && (sum + bit[temp]) < k){
+				cur = temp;
+				sum += bit[temp];
+			}
+		}
+		if(cur == ExtraSize){
+			return 0;
+		}
+		return cur + 1;
+	}
+
 };
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
