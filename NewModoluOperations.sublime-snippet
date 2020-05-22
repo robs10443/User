@@ -77,35 +77,35 @@ public:
         return modint(((modint(den) ^ (mod - 2)) * (this -> val)));
     }
 
-    modint operator += (modint x){
+    void operator += (modint x){
         this -> val = (((this -> val) + (x.val))%mod);
     }
 
-    modint operator -= (modint x){
+    void operator -= (modint x){
         this -> val = ((this -> val) - (x.val) + mod) % mod;
     }
     
-    modint operator *= (modint x){
+    void operator *= (modint x){
         this -> val = ((this -> val) * (x.val))%mod;
     }
     
-    modint operator /= (modint x){
+    void operator /= (modint x){
         this -> val = (modint(this -> val) / (x)).val;
     }
     
-    modint operator += (long long x){
+    void operator += (long long x){
     	this->val = (this -> val + x)%mod;
     }
 
-    modint operator -= (long long x){
+    void operator -= (long long x){
     	this->val = (this -> val - x + mod)%mod;
     }
     
-    modint operator *= (long long x){
+    void operator *= (long long x){
         this -> val = ((this -> val) * (x))%mod;
     }
     
-    modint operator /= (long long x){
+    void operator /= (long long x){
         this -> val = (modint(this -> val) / modint(x)).val;
     }
     
