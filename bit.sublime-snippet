@@ -45,6 +45,15 @@ struct BIT{//use one based indexing
 		return cur + 1;
 	}
 
+	//one based indexing
+	int lower_bound(int val){
+		return (pref(val - 1) + 1);
+	}
+
+	//one based indexing
+	int upper_bound(int val){
+		return (pref(val) + 1);
+	}
 };
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
