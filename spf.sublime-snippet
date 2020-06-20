@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+int Ns = (int)1e5 + 10;
+int spf[Ns];
+void preSpf(){
+	n = Ns - 10 + 1;
+	for(int i = 0;i < n;i++){
+		spf[i] = i;
+	}
+	for(int i = 2;i < n;i+=2){
+		spf[i] = 2;
+	}
+	for(int i = 3;i*i < n;i+=2){
+		if(spf[i] == i){
+			for(int j = i;j < n;j+=i){
+				spf[j] = min(spf[j],i);
+			}
+		}
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>shortestPrimeFactor</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
