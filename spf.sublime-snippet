@@ -13,7 +13,7 @@ void preSpf(){
 	for(int i = 3;i*i < n;i+=2){
 		if(spf[i] == i){
 			for(int j = i;j < n;j+=i){
-				spf[j] = min(spf[j],i);
+				spf[j] = min(spf[j],i); // nice job done here
 			}
 		}
 	}
