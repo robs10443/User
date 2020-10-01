@@ -24,7 +24,7 @@ int mul(int a, int b){
 int divi(int a, int b){
     return(mul(a, power(b, M - 2)) % M);
 }
-const int Xn = 2e5 + 1;
+const int Xn = 200001;
 int factorial[Xn],ifactorial[Xn];
 void pre(){
 	factorial[0] = 1;
