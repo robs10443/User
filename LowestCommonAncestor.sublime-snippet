@@ -9,7 +9,7 @@ void dfs(int src,int par,int lvl){
 	parent[src] = par;
 	level[src] = lvl;
 	lca[src][0] = par;
-	for(auto x : gh[src]){
+	for(auto &x : gh[src]){
 		if(x != par){
 			dfs(x,src,lvl+1);
 		}
